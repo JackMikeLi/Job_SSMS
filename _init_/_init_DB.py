@@ -1,9 +1,9 @@
 import pymssql
 # 初始化数据库
-server = '192.168.1.106'
-database = 'JobDB'
-username = 'sa'
-password = '123456789'
+server = 'your_server'
+database = 'your_database_name'
+username = 'your_user_name'
+password = 'your_user_password'
 connection = pymssql.connect(server, username, password, database)
 cursor = connection.cursor()
 
