@@ -12,10 +12,10 @@ class DBHelper:
     submit_all_sql = "Select * from Job_Submit"
     view_all_sql = "Select * from Job_View"
     def __init__(self):
-        self.connect = pymssql.connect(server='192.168.1.106',
-                                       user='sa',
-                                       password='123456789',
-                                       database='JobDB',
+        self.connect = pymssql.connect(server='your_server',
+                                       user='your_user_name',
+                                       password='your_password',
+                                       database='your_database_name',
                                        charset='utf8',
                                        autocommit=True)
         if self.connect:
