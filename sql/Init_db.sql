@@ -176,10 +176,35 @@ values
 (4,2201,'数据不科学','2024-05-12')
 
 
+--创建视图
+	
+--创建一个视图来统计当前活动状态作业提交的学生名单
+CREATE VIEW JobSubmit AS
+SELECT J.JName,start_time,end_time,S.SName
+FROM Job_Submit as JS,Student as S,Job as J
+WHERE S.S# = JS.S# AND J.J# = JS.J# AND start_time <= '2024-5-12' AND end_time >= '2024-5-12'
+
+--创建一个视图来统计每份作业应该提交作业的同学
+CREATE VIEW JobShouldSubmit AS
+SELECT J.J#,J.JName,start_time,end_time,S.SName FROM Job j ,Student_Class sc ,Student s 
+WHERE J.SC# = SC.SC# AND s.SC# =sc.SC#
 
 
+--创建一个视图统计目前未提交作业的所有同学
+CREATE VIEW JobNotSubmit AS
+Select * FROM JobShouldSubmit JSS
+EXCEPT
+SELECT * From JobSubmit
 
+--创建视图，统计还有1天截止的作业
+CREATE VIEW JobInOneDay AS
+SELECT J#,JName,start_time,end_time FROM Job j
+WHERE DATEDIFF(day, '2024-5-12' , end_time) = 1
 
+--创建视图统计作业查看情况
+CREATE VIEW ViewJob AS
+SELECT s.S#,SName,J# FROM Student s 
+RIGHT Join Job_View jv ON jv.S# = s.S# 
 
 
 
