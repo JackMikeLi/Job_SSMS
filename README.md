@@ -1,6 +1,8 @@
 ## 使用步骤
 
 修改_init_DB.py中的服务器端口、数据库名、用户名、用户名密码
+注意：将数据库名,设置为'JobDB'
+database = 'JobDB'
 
 (![image](https://github.com/JackMikeLi/Job_SSMS/blob/master/Imag/DBHelper.png))
 
