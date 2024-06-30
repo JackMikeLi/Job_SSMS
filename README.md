@@ -4,7 +4,7 @@
 注意：将数据库名,设置为'JobDB'
 database = 'JobDB'
 
-(![image](https://github.com/JackMikeLi/Job_SSMS/blob/master/Imag/DBHelper.png))
+(![image](https://github.com/JackMikeLi/Job_SSMS/blob/master/Imag/init.png))
 
 修改DBHelper.py中的服务器端口、数据库名、用户名、用户名密码
 
